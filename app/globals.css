@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #eff1ea;
+  --surface: #ffffff;
+  --surface-2: #f7f7f2;
+  --ink: #152018;
+  --ink-soft: #45543f;
+  --border: #dbe0d2;
+  --ring-full: 251.2;
+  --ring-offset: 251.2;
+}
+
+.dark {
+  --bg: #101a13;
+  --surface: #16241a;
+  --surface-2: #1b2d20;
+  --ink: #eef2ea;
+  --ink-soft: #a7b8a0;
+  --border: #26392c;
+}
+
+* {
+  border-color: var(--border);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--ink);
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+.card {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1.25rem;
+  box-shadow: 0 1px 2px rgba(21, 32, 24, 0.05), 0 10px 30px -12px rgba(21, 32, 24, 0.1);
+}
+
+.dark .card {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 10px 30px -12px rgba(0, 0, 0, 0.5);
+}
+
+::selection {
+  background: #d9a441;
+  color: #152018;
+}
+
+:focus-visible {
+  outline: 2px solid #3f6b4f;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 8px;
+}
+
+.mono-num {
+  font-family: var(--font-mono);
+  letter-spacing: -0.02em;
+}
